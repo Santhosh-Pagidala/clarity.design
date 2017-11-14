@@ -1,0 +1,15 @@
+<div class="todos-container" flex flex-valign>
+	<div class="card card-block todo-list">
+        <div class="row" *ngFor = 'let todo of todos; let i = index' [ngClass]="{'completed': todo.completed, 'todo-item': true}">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 todo-txt">{{todo.title}}</div>
+			<div class="row">
+				<div class="checkbox">
+                    <input type="checkbox" id="status_{{i}}" [checked]="todo.completed" (change)="changeCheckboxStatus(todo)" />
+                    <label for="status_{{i}}">Change status</label>
+                </div>
+				<button class="btn btn-primary btn-sm" (click)="changeStatus(todo)">Update Status</button>
+				<button class="btn btn-sm" (click)="deleteTodo(todo)">Delete</button>
+			</div>
+		</div>
+    </div>
+</div>

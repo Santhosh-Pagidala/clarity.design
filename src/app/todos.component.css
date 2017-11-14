@@ -1,0 +1,41 @@
+.todos-container {
+    display: flex;
+    align-content: center;
+    position: fixed;
+    top: 60px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.todo-list{
+	max-height: 80%;
+    overflow: auto;
+    margin: auto;
+    width: 80%;
+}
+
+.todo-list .todo-item{
+	margin: 0;
+	padding: 10px;
+	border: 1px solid #dadada;
+    border-radius: 4px;
+    margin-bottom: 6px;
+}
+
+.todo-list .row.completed .todo-txt{
+	text-decoration: line-through;
+}
+
+.todo-txt {
+    padding: 10px 5px;
+}
+
+.todo-item .row {
+    margin: 0;
+    padding: 0 7px;
+}
+
+.todo-item button {
+    margin: 0 15px !important;
+}

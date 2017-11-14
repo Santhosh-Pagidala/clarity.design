@@ -1,0 +1,15 @@
+.user-cards-container{
+	padding: 10px;
+}
+
+.user-cards .card {
+    height: 100%;
+}
+
+.user-cards .card .card-block {
+    height: calc(100% - 50px);
+}
+
+.user-cards {
+    margin-bottom: 10px;
+}

@@ -1,0 +1,33 @@
+<div class="row" [ngClass]="{'user-cards-container': true}">
+    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12" *ngFor = 'let user of users' [ngClass]="{'user-cards': true}">
+        <div class="card">
+            <div class="card-block">
+                <div flex>
+					<h3 class="card-title">{{user.name}}</h3>
+					<span>{{user.email}}</span>
+				</div>
+				<div class="card-text">
+                    <div class="row">
+						<div class="col-md-4 col-sm-4 col-xs-6">
+							<span>Company</span>
+						</div>
+						<div class="col-md-8 col-sm-8 col-xs-6">
+							<span>{{user.company.name}}</span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4 col-sm-4 col-xs-6">
+							<span>Tag line</span>
+						</div>
+						<div class="col-md-8 col-sm-8 col-xs-6">
+							<span>{{user.company.catchPhrase}}</span>
+						</div>
+					</div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <a href="/todos/{{user.id}}" class="btn btn-sm btn-link">View Todos</a>
+            </div>
+        </div>
+    </div>
+</div>

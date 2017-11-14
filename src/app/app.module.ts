@@ -1,18 +1,36 @@
+import { NgModule } from "@angular/core";
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-
+import { ClarityModule } from "clarity-angular";
 import { AppComponent } from './app.component';
+import { ViewsComponent } from './views.component';
+import { TodosComponent } from './todos.component';
+import { RouterModule, Routes } from '@angular/router';
+import {HttpClientModule} from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
+const appRoutes: Routes = [
+  { path: 'views', component: ViewsComponent },
+  { path: 'todos/:id', component: TodosComponent }
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+	ViewsComponent,
+	TodosComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+	ClarityModule.forRoot(),
+	HttpClientModule,
+	RouterModule.forRoot(
+      appRoutes //,{ enableTracing: true }
+    )
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [
+	  AppComponent
+  ]
 })
+
 export class AppModule { }
